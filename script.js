@@ -12,21 +12,21 @@ function mostrarParagrafo() {
 form.addEventListener('submit', function (e) {
   e.preventDefault()
 
+   if (inputNumber2.valueAsNumber > inputNumber1.valueAsNumber) {
+     p.innerHTML = `O valor <b>${inputNumber2.valueAsNumber}</b> se encontrava no campo B - <b>FORMULÁRIO VÁLIDO</b>`
+     mostrarParagrafo()
+     p.style.backgroundColor = "#658864"
+   
+   } else if (inputNumber1.valueAsNumber === inputNumber2.valueAsNumber) {
+     p.innerHTML = `O valor <b>${inputNumber1.valueAsNumber}</b> é igual ao valor <b>${inputNumber2.valueAsNumber}</b>`
+     mostrarParagrafo()
+     p.style.backgroundColor = '#8DCBE6'
+   
+   } else {
+     p.innerHTML = `O valor <b>${inputNumber1.valueAsNumber}</b> se encontrava no campo A - <b>FORMULÁRIO INVÁLIDO</b>`
+     mostrarParagrafo()
+     p.style.backgroundColor = 'red'
+     p.style.color = "#fff"
+   }
 
-  if (inputNumber2.value > inputNumber1.value) {
-    p.innerHTML = `O valor <b>${inputNumber2.value}</b> se encontrava no campo B - <b>FORMULÁRIO VÁLIDO</b>`
-    mostrarParagrafo()
-    p.style.backgroundColor = "#658864"
-   
-  } else if (inputNumber1.value === inputNumber2.value) {
-    p.innerHTML = `O valor <b>${inputNumber1.value}</b> é igual ao valor <b>${inputNumber2.value}</b>`
-    mostrarParagrafo()
-    p.style.backgroundColor = '#8DCBE6'
-   
-  } else {
-    p.innerHTML = `O valor <b>${inputNumber1.value}</b> se encontrava no campo A - <b>FORMULÁRIO INVÁLIDO</b>`
-    mostrarParagrafo()
-    p.style.backgroundColor = 'red'
-    p.style.color = "#fff"
-  }
 })
